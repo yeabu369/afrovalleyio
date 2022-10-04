@@ -8,17 +8,9 @@ const content = {
             "link": "#"
           },
           {
-            "label": "Pricing",
-            "link": "#"
-          },
-          {
             "label": "Support",
             "link": "#"
           },
-          {
-            "label": "Forums",
-            "link": "#"
-          }
         ]
       },
       {
@@ -26,10 +18,6 @@ const content = {
         "links": [
           {
             "label": "Contribute",
-            "link": "#"
-          },
-          {
-            "label": "Media assets",
             "link": "#"
           },
           {
@@ -46,15 +34,11 @@ const content = {
         "title": "Community",
         "links": [
           {
-            "label": "Join Discord",
+            "label": "Join Telegram",
             "link": "#"
           },
           {
             "label": "Follow on Twitter",
-            "link": "#"
-          },
-          {
-            "label": "Email newsletter",
             "link": "#"
           },
           {
