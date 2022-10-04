@@ -249,10 +249,13 @@ export default function HeaderMegaMenu() {
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
           <a href="#" className={classes.link}>
-            Learn
+            Orders
           </a>
           <a href="#" className={classes.link}>
-            Academy
+            Stock
+          </a>
+          <a href="#" className={classes.link}>
+            Chat
           </a>
 
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
