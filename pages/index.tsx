@@ -16,10 +16,11 @@ const Home: NextPage = () => {
       <main>
         <Header />
         <Hero />
-        <Footer data={content.data}/>
       </main>
 
-      <footer></footer>
+      <footer>
+        <Footer data={content.data} />
+      </footer>
     </div>
   )
 }

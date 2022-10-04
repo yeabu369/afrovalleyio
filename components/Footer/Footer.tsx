@@ -1,5 +1,5 @@
 import { createStyles, Text, Container, ActionIcon, Group } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
+import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandTelegram } from '@tabler/icons';
 import Image from 'next/image';
 
 const useStyles = createStyles((theme) => ({
@@ -134,17 +134,20 @@ export default function FooterLinks({ data }: FooterLinksProps) {
                     <Image src="/AfroValley-Logo.png" width="120" height="40" alt="AfroValley" />
 
                     <Text size="xs" color="dimmed" className={classes.description}>
-                        Build fully functional accessible web applications faster than ever
+                        Trade with farmers at ease and speed
                     </Text>
                 </div>
                 <div className={classes.groups}>{groups}</div>
             </Container>
             <Container className={classes.afterFooter}>
                 <Text color="dimmed" size="sm">
-                    © 2020 mantine.dev. All rights reserved.
+                    © 2022 afrovalley.io. All rights reserved.
                 </Text>
 
                 <Group spacing={0} className={classes.social} position="right" noWrap>
+                    <ActionIcon size="lg">
+                        <IconBrandTelegram size={18} stroke={1.5} />
+                    </ActionIcon>
                     <ActionIcon size="lg">
                         <IconBrandTwitter size={18} stroke={1.5} />
                     </ActionIcon>
