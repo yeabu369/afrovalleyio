@@ -73,16 +73,15 @@ export default function HeroTitle() {
         <div className={classes.wrapper}>
             <Container size={700} className={classes.inner}>
                 <h1 className={classes.title}>
-                    A{' '}
-                    <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
-                        fully featured
+                    <Text component="span" variant="gradient" gradient={{ from: 'green', to: 'cyan' }} inherit>
+                        Connecting
                     </Text>{' '}
-                    React components and hooks library
+                    Farmers directly with Buyers
                 </h1>
 
                 <Text className={classes.description} color="dimmed">
-                    Build fully functional accessible web applications with ease – Mantine includes more than
-                    100 customizable components and hooks to cover you in any situation
+                    Trade Coffee, Tea and Fruits with ease using Smart Contracts. Track your orders and delivery. 
+                    Communicate and settle with farmers.
                 </Text>
 
                 <Group className={classes.controls}>
@@ -90,7 +89,7 @@ export default function HeroTitle() {
                         size="xl"
                         className={classes.control}
                         variant="gradient"
-                        gradient={{ from: 'blue', to: 'cyan' }}
+                        gradient={{ from: 'green', to: 'cyan' }}
                     >
                         Get started
                     </Button>
