@@ -145,7 +145,7 @@ export default function HeaderMegaMenu() {
   ));
 
   return (
-    <Box pb={120}>
+    <Box>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: '100%' }}>
           <Image src="/AfroValley-Logo.png" width="120" height="40" alt="AfroValley" />
@@ -212,7 +212,12 @@ export default function HeaderMegaMenu() {
 
           <Group className={classes.hiddenMobile}>
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button
+              variant="gradient"
+              gradient={{ from: 'green', to: 'cyan' }}
+            >
+              Sign up
+            </Button>
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} />
@@ -254,7 +259,12 @@ export default function HeaderMegaMenu() {
 
           <Group position="center" grow pb="xl" px="md">
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button
+              variant="gradient"
+              gradient={{ from: 'green', to: 'cyan' }}
+            >
+              Sign up
+            </Button>
           </Group>
         </ScrollArea>
       </Drawer>
