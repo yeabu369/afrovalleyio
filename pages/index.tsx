@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Header, Hero } from '../components'
+import { Footer, Header, Hero } from '../components'
+import content from '../data/footer';
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       <main>
         <Header />
         <Hero />
+        <Footer data={content.data}/>
       </main>
 
       <footer></footer>
