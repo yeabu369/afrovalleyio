@@ -148,11 +148,11 @@ export default function HeaderMegaMenu() {
     <Box pb={120}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: '100%' }}>
-          <Image src="/AfroValley-Logo.png" width="90" height="32" alt="AfroValley" />
+          <Image src="/AfroValley-Logo.png" width="120" height="40" alt="AfroValley" />
 
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
             <a href="#" className={classes.link}>
-              Home
+              Marketplace
             </a>
             <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
@@ -200,10 +200,13 @@ export default function HeaderMegaMenu() {
               </HoverCard.Dropdown>
             </HoverCard>
             <a href="#" className={classes.link}>
-              Learn
+              Orders
             </a>
             <a href="#" className={classes.link}>
-              Academy
+              Stock
+            </a>
+            <a href="#" className={classes.link}>
+              Chat
             </a>
           </Group>
 
