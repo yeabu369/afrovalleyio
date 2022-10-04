@@ -4,6 +4,7 @@ import { MantineProvider } from '@mantine/core';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
+  const getLayout = (Component as any).getLayout || ((page: any) => page);
 
   return (
     <>
@@ -20,7 +21,7 @@ export default function App(props: AppProps) {
           colorScheme: 'light',
         }}
       >
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </MantineProvider>
     </>
   );
