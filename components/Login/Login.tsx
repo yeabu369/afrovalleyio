@@ -9,11 +9,16 @@ import {
     Container,
     Group,
     Button,
+    Center,
 } from '@mantine/core';
+import AfroValleyLogo from '../Logo/Logo';
 
 export default function AuthenticationTitle() {
     return (
         <Container size={420} my={40}>
+            <Center pb={90}>
+                <AfroValleyLogo width={240} height={80}/>
+            </Center>
             <Title
                 align="center"
                 sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
@@ -28,7 +33,7 @@ export default function AuthenticationTitle() {
             </Text>
 
             <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                <TextInput label="Email" placeholder="you@mantine.dev" required />
+                <TextInput label="Email" placeholder="you@afrovalley.io" required />
                 <PasswordInput label="Password" placeholder="Your password" required mt="md" />
                 <Group position="apart" mt="md">
                     <Checkbox label="Remember me" />
@@ -36,7 +41,7 @@ export default function AuthenticationTitle() {
                         Forgot password?
                     </Anchor>
                 </Group>
-                <Button fullWidth mt="xl">
+                <Button variant="gradient" gradient={{ from: 'green', to: 'cyan' }} fullWidth mt="xl">
                     Sign in
                 </Button>
             </Paper>

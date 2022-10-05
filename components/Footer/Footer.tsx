@@ -1,6 +1,6 @@
 import { createStyles, Text, Container, ActionIcon, Group } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandTelegram } from '@tabler/icons';
-import Image from 'next/image';
+import AfroValleyLogo from '../Logo/Logo';
 
 const useStyles = createStyles((theme) => ({
     footer: {
@@ -131,7 +131,7 @@ export default function FooterLinks({ data }: FooterLinksProps) {
         <footer className={classes.footer}>
             <Container className={classes.inner}>
                 <div className={classes.logo}>
-                    <Image src="/AfroValley-Logo.png" width="120" height="40" alt="AfroValley" />
+                    <AfroValleyLogo width={120} height={40} />
 
                     <Text size="xs" color="dimmed" className={classes.description}>
                         Trade with farmers at ease and speed

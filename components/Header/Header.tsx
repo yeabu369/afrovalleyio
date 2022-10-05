@@ -27,7 +27,7 @@ import {
   IconCoin,
   IconChevronDown,
 } from '@tabler/icons';
-import Image from 'next/image';
+import AfroValleyLogo from '../Logo/Logo';
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -148,7 +148,7 @@ export default function HeaderMegaMenu() {
     <Box>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: '100%' }}>
-          <Image src="/AfroValley-Logo.png" width="120" height="40" alt="AfroValley" />
+          <AfroValleyLogo width={120} height={40} />
 
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
             <a href="#" className={classes.link}>
@@ -211,7 +211,7 @@ export default function HeaderMegaMenu() {
           </Group>
 
           <Group className={classes.hiddenMobile}>
-            <Button variant="default">Log in</Button>
+            <Button component='a' href='/auth/login' variant="default">Log in</Button>
             <Button
               variant="gradient"
               gradient={{ from: 'green', to: 'cyan' }}
