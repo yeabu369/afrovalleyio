@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Footer, Header, Hero } from '../components'
+import { Footer, Header, Hero, Layout } from '../components'
 import content from '../data/footer';
 
-const Home: NextPage = () => {
+const Home: NextPage & { getLayout: Function } = () => {
   return (
     <div>
       <Head>
@@ -13,15 +13,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Header />
-        <Hero />
-      </main>
-
-      <footer>
-        <Footer data={content.data} />
-      </footer>
+      <Hero />
     </div>
+  )
+}
+
+Home.getLayout = function getLayout(page: NextPage) {
+  return (
+    <Layout>
+      <Header />
+      {page}
+      <Footer data={content.data} />
+    </Layout>
   )
 }
 
