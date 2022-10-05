@@ -263,8 +263,10 @@ export default function HeaderMegaMenu() {
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
           <Group position="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
+            <Button component='a' href='/auth/login' variant="default">Log in</Button>
             <Button
+              component='a'
+              href='/auth/signup'
               variant="gradient"
               gradient={{ from: 'green', to: 'cyan' }}
             >
