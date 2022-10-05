@@ -11,7 +11,7 @@ const Auth: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{authType === 'login' ? 'Login' : 'Signup'} | AfroValley Trade Platform</title>
+        <title>{ authType === 'login' ? "Login" : "Signup" } | AfroValley Trade Platform</title>
         <meta name="description" content="Afrovalley Trading Platform" />
       </Head>
       {authType === 'login' ? <Login /> : <Signup />}
