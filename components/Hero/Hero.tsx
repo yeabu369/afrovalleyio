@@ -86,6 +86,8 @@ export default function HeroTitle() {
 
                 <Group className={classes.controls}>
                     <Button
+                        component='a'
+                        href='/auth/signup'
                         size="xl"
                         className={classes.control}
                         variant="gradient"

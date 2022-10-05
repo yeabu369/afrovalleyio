@@ -213,6 +213,8 @@ export default function HeaderMegaMenu() {
           <Group className={classes.hiddenMobile}>
             <Button component='a' href='/auth/login' variant="default">Log in</Button>
             <Button
+              component='a'
+              href='/auth/signup'
               variant="gradient"
               gradient={{ from: 'green', to: 'cyan' }}
             >
