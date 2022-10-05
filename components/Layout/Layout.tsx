@@ -1,8 +1,10 @@
 import React from 'react'
+import type { NextPage } from 'next'
 
-const Layout = () => {
+
+const Layout = ({ children }: any) => {
     return (
-        <div>Layout</div>
+        <main>{children}</main>
     )
 }
 
