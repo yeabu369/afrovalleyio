@@ -27,7 +27,7 @@ export default function AuthenticationTitle() {
             </Title>
             <Text color="dimmed" size="sm" align="center" mt={5}>
                 Do not have an account yet?{' '}
-                <Anchor<'a'> href="#" size="sm" onClick={(event) => event.preventDefault()}>
+                <Anchor<'a'> href="/auth/signup" size="sm" onClick={(event) => event.preventDefault()}>
                     Create account
                 </Anchor>
             </Text>
