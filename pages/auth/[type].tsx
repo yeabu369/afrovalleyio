@@ -8,10 +8,12 @@ const Auth: NextPage = () => {
 
   const authType = router.query.type;
 
+  const authTitle = `${ authType === 'login' ? "Login" : "Signup" } | AfroValley Trade Platform`;
+
   return (
     <>
       <Head>
-        <title>{ authType === 'login' ? "Login" : "Signup" } | AfroValley Trade Platform</title>
+        <title>{authTitle}</title>
         <meta name="description" content="Afrovalley Trading Platform" />
       </Head>
       {authType === 'login' ? <Login /> : <Signup />}
