@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { Stepper, Button, Group, Box, Container, Center, Title, Text, Paper, TextInput, PasswordInput, Stack, Autocomplete, Loader } from '@mantine/core';
-import { IconMailOpened, IconShieldCheck, IconUserCheck } from '@tabler/icons';
+import { IconMailOpened, IconSettings, IconShieldCheck, IconUserCheck } from '@tabler/icons';
 import AfroValleyLogo from '../Logo/Logo';
 
 export default function Signup() {
@@ -43,8 +43,23 @@ export default function Signup() {
       </Title>
       <Stepper active={active} onStepClick={setActive} breakpoint="sm">
         <Stepper.Step icon={<IconUserCheck size={18} />} label="First step" description="Create an account">
-          <Stack align="center">
-            <Paper withBorder shadow="md" p={30} mt={30} radius="md" >
+          <Box
+            sx={(theme) => ({
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+              paddingLeft: (theme.spacing.xl) * 10,
+              paddingRight: (theme.spacing.xl) * 10,
+              paddingTop: (theme.spacing.xl) * 2,
+              paddingBottom: (theme.spacing.xl) * 2,
+              borderRadius: theme.radius.md,
+              cursor: 'pointer',
+
+              '&:hover': {
+                backgroundColor:
+                  theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+              },
+            })}
+          >
+            <Paper withBorder shadow="md" p={30} radius="md" >
               <TextInput label="Firstname" placeholder="First Name" required />
               <TextInput label="Lastname" placeholder="Last Name" required mt="md" />
               <Autocomplete
@@ -55,16 +70,79 @@ export default function Signup() {
                 label="Email"
                 placeholder="you@afrovalley.io"
                 mt="md"
+                required
               />
               <PasswordInput label="Password" placeholder="Your password" required mt="md" />
             </Paper>
-          </Stack>
+          </Box>
         </Stepper.Step>
         <Stepper.Step icon={<IconMailOpened size={18} />} label="Second step" description="Verify email">
-          <Center>Step 2 content: Verify email</Center>
+          <Box
+            sx={(theme) => ({
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+              paddingLeft: (theme.spacing.xl) * 10,
+              paddingRight: (theme.spacing.xl) * 10,
+              paddingTop: (theme.spacing.xl) * 2,
+              paddingBottom: (theme.spacing.xl) * 2,
+              borderRadius: theme.radius.md,
+              cursor: 'pointer',
+
+              '&:hover': {
+                backgroundColor:
+                  theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+              },
+            })}
+          >
+            <Paper withBorder shadow="md" p={30} radius="md" >
+              <Text size="md" weight={500} mb="md">
+                We have sent a verification code to your email address. Please enter the code below to verify your email address.
+              </Text>
+              <TextInput label="Verification Code" placeholder="Verification Code" required />
+            </Paper>
+          </Box>
+        </Stepper.Step>
+        <Stepper.Step icon={<IconSettings size={18} />} label="Third step" description="Update Preferences">
+          <Box
+            sx={(theme) => ({
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+              paddingLeft: (theme.spacing.xl) * 10,
+              paddingRight: (theme.spacing.xl) * 10,
+              paddingTop: (theme.spacing.xl) * 2,
+              paddingBottom: (theme.spacing.xl) * 2,
+              borderRadius: theme.radius.md,
+              cursor: 'pointer',
+
+              '&:hover': {
+                backgroundColor:
+                  theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+              },
+            })}
+          >
+          </Box>
         </Stepper.Step>
         <Stepper.Step icon={<IconShieldCheck size={18} />} label="Final step" description="Get full access">
-          <Center>Step 3 content: Get full access</Center>
+        <Box
+            sx={(theme) => ({
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+              paddingLeft: (theme.spacing.xl) * 10,
+              paddingRight: (theme.spacing.xl) * 10,
+              paddingTop: (theme.spacing.xl) * 2,
+              paddingBottom: (theme.spacing.xl) * 2,
+              borderRadius: theme.radius.md,
+              cursor: 'pointer',
+
+              '&:hover': {
+                backgroundColor:
+                  theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+              },
+            })}
+          >
+            <Paper withBorder shadow="md" p={30} radius="md" >
+              <Text size="sm" mb="md">
+                You have successfully verified your email address. You can now get full access to AfroValley.
+              </Text>
+            </Paper>
+          </Box>
         </Stepper.Step>
         <Stepper.Completed>
           <Center>Completed, click back button to get to previous step</Center>
