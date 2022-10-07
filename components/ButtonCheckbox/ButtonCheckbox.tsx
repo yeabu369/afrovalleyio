@@ -87,7 +87,7 @@ const mockdata = [
   { description: 'Snow and ice', title: 'Winter vacation' },
 ];
 
-export function ButtonCheckboxes() {
+export default function ButtonCheckboxes() {
   const items = mockdata.map((item) => <ButtonCheckbox {...item} key={item.title} />);
   return (
     <SimpleGrid
