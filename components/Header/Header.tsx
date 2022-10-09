@@ -27,6 +27,7 @@ import {
   IconCoin,
   IconChevronDown,
 } from '@tabler/icons';
+import Link from 'next/link';
 import AfroValleyLogo from '../Logo/Logo';
 
 const useStyles = createStyles((theme) => ({
@@ -151,9 +152,11 @@ export default function HeaderMegaMenu() {
           <AfroValleyLogo width={120} height={40} />
 
           <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
-            <a href="/marketplace" className={classes.link}>
-              Marketplace
-            </a>
+            <Link href="/marketplace" passHref>
+              <a className={classes.link}>
+                Marketplace
+              </a>
+            </Link>
             <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
                 <a href="#" className={classes.link}>
@@ -238,9 +241,11 @@ export default function HeaderMegaMenu() {
         <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md">
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
-          <a href="/marketplace" className={classes.link}>
-            Marketplace
-          </a>
+          <Link href="/marketplace" passHref>
+            <a className={classes.link}>
+              Marketplace
+            </a>
+          </Link>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
