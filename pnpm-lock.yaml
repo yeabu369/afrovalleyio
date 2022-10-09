@@ -10,7 +10,6 @@ specifiers:
   '@types/node': 18.7.23
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
-  clsx: ^1.2.1
   eslint: 8.24.0
   eslint-config-next: 12.3.1
   next: 12.3.1
@@ -25,7 +24,6 @@ dependencies:
   '@mantine/hooks': 5.5.2_react@18.2.0
   '@mantine/next': 5.5.2_6tawbrm53n4muonpugu7ldclma
   '@tabler/icons': 1.101.0_biqbaboplfbrettd7655fr4n2y
-  clsx: 1.2.1
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -939,11 +937,6 @@ packages:
 
   /clsx/1.1.1:
     resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
-    engines: {node: '>=6'}
-    dev: false
-
-  /clsx/1.2.1:
-    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
     engines: {node: '>=6'}
     dev: false
 
