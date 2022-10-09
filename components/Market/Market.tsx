@@ -4,6 +4,7 @@ import { useState } from 'react';
 import PricePicker from '../PricePicker/PricePicker';
 import CropGradingPicker from '../CropGradingPicker/CropGradingPicker';
 import CropTypePicker from '../CropTypePicker/CropTypePicker';
+import OrderCard from '../OrderCards/OrderCard/OrderCard';
 
 const Market = () => {
   const [loading, setLoading] = useState(false);
@@ -29,7 +30,7 @@ const Market = () => {
             </Grid.Col>
             <Grid.Col span={12}>
               {/* Coffee Order list */}
-
+              <OrderCard />
             </Grid.Col>
           </Grid>
         </Skeleton>
