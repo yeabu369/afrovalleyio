@@ -1,7 +1,6 @@
 import { Button, Box, Grid, SimpleGrid, Skeleton, Text, clsx, Group} from '@mantine/core'
 import useStyles from './Market.styles';
 import { useState } from 'react';
-import { IconChevronDown } from '@tabler/icons';
 import PricePicker from '../PricePicker/PricePicker';
 import CropGradingPicker from '../CropGradingPicker/CropGradingPicker';
 import CropTypePicker from '../CropTypePicker/CropTypePicker';
@@ -30,13 +29,13 @@ const Market = () => {
             </Grid.Col>
             <Grid.Col span={12}>
               {/* Coffee Order list */}
-              
+
             </Grid.Col>
           </Grid>
         </Skeleton>
       </Box>
       <Box className={classes.map}>
-        <Skeleton className={clsx(classes.hFull, classes.border)} />
+        <Skeleton className={cx(classes.hFull)} />
       </Box>
     </SimpleGrid>
   )

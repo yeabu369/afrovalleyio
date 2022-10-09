@@ -15,7 +15,6 @@ export default createStyles((theme) => ({
     },
     map: {
         height: "100%",
-        border: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
     },
     filter: {
         borderBottom: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
