@@ -1,8 +1,12 @@
 import React from 'react'
+import OrderCard from './OrderCard/OrderCard'
 
 const OrderCards = () => {
   return (
-    <div>OrderCards</div>
+    <>
+      <OrderCard />
+      <OrderCard />
+    </>
   )
 }
 
