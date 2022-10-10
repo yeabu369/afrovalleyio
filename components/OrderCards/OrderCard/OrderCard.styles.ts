@@ -1,8 +1,9 @@
 import { createStyles } from "@mantine/core";
+import { IconBorderBottom } from "@tabler/icons";
 
 export default createStyles((theme) => ({
     card: {
-        padding: 0
+        borderBottom: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
     },
     orderImage: {
         display: "flex",
