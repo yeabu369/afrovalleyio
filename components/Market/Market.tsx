@@ -1,10 +1,11 @@
-import { Button, Box, Grid, SimpleGrid, Skeleton, Text, clsx, Group} from '@mantine/core'
+import { Box, Grid, SimpleGrid, Skeleton, Text, clsx, Group} from '@mantine/core'
 import useStyles from './Market.styles';
 import { useState } from 'react';
 import PricePicker from '../PricePicker/PricePicker';
 import CropGradingPicker from '../CropGradingPicker/CropGradingPicker';
 import CropTypePicker from '../CropTypePicker/CropTypePicker';
-import OrderCard from '../OrderCards/OrderCard/OrderCard';
+
+import OrderCards from '../OrderCards/OrderCards';
 
 const Market = () => {
   const [loading, setLoading] = useState(false);
@@ -30,7 +31,7 @@ const Market = () => {
             </Grid.Col>
             <Grid.Col span={12}>
               {/* Coffee Order list */}
-              <OrderCard />
+              <OrderCards />
             </Grid.Col>
           </Grid>
         </Skeleton>
