@@ -2,17 +2,15 @@ import { createStyles } from "@mantine/core";
 
 export default createStyles((theme) => ({
     card: {
+        padding: 0
+    },
+    orderImage: {
         display: "flex",
-        flexDirection: "row",
-        flexGrow: 1,
-        marginBottom: theme.spacing.md,
+        alignItems: "center",
+        marginBottom: theme.spacing.xs,
     },
     image: {
-        display: "flex",
-        height: "100%",
-        marginRight: theme.spacing.md,
-        border: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
-        position: "relative",
+        height: "100%"
     },
     body: {
         display: "flex",
@@ -25,10 +23,7 @@ export default createStyles((theme) => ({
         left: 0,
     },
     avatar: {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        zIndex: 2,
+        border: `2px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white}`,
     },
     text: {
         marginBottom: theme.spacing.md,
@@ -46,10 +41,9 @@ export default createStyles((theme) => ({
         width: "100%",
     },
     border: {
-        border: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
+        border: `2px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
     },
-    skeleton: {
-        width: "100%",
-        height: "100%",
+    hFull: {
+        height: "100%"
     }
 }));
