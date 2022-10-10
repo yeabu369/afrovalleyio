@@ -23,7 +23,7 @@ export default createStyles((theme) => ({
         left: 0,
     },
     avatar: {
-        border: `2px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white}`,
+        border: `2px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[2]}`,
     },
     text: {
         marginBottom: theme.spacing.md,
