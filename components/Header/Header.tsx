@@ -240,12 +240,9 @@ export default function HeaderMegaMenu() {
       >
         <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md">
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
-
-          <Link href="/marketplace" passHref>
-            <a className={classes.link}>
+            <Anchor href="/marketplace" className={classes.link}>
               Marketplace
-            </a>
-          </Link>
+            </Anchor>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
@@ -255,15 +252,15 @@ export default function HeaderMegaMenu() {
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
-          <a href="#" className={classes.link}>
+          <Anchor href="#" className={classes.link}>
             Orders
-          </a>
-          <a href="#" className={classes.link}>
+          </Anchor>
+          <Anchor href="#" className={classes.link}>
             Stock
-          </a>
-          <a href="#" className={classes.link}>
+          </Anchor>
+          <Anchor href="#" className={classes.link}>
             Chat
-          </a>
+          </Anchor>
 
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
