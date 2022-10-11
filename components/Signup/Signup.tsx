@@ -3,7 +3,7 @@ import { Stepper, Button, Group, Box, Container, Center, Title, Text, Paper, Tex
 import { IconMailOpened, IconSettings, IconShieldCheck, IconUserCheck } from '@tabler/icons';
 import AfroValleyLogo from '../Logo/Logo';
 
-export default function Signup() {
+export default function GetStarted() {
   const [active, setActive] = useState(0);
   const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
@@ -24,7 +24,7 @@ export default function Signup() {
       setLoading(true);
       timeoutRef.current = window.setTimeout(() => {
         setLoading(false);
-        setData(['gmail.com', 'outlook.com', 'yahoo.com', 'afrovalley.io'].map((provider) => `${val}@${provider}`));
+        setData(['gmail.com', 'outlook.com', 'afrovalley.io'].map((provider) => `${val}@${provider}`));
       }, 1000);
     }
   };
