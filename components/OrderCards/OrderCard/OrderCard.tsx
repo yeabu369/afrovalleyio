@@ -1,10 +1,38 @@
-import { Avatar, Box, Card, Grid, Group, Skeleton, Stack, Text } from '@mantine/core'
+import { Avatar, Card, Grid, Group, Skeleton, Stack, Text } from '@mantine/core'
 import { IconBuildingStore, IconSeeding, IconStar } from '@tabler/icons';
 import Image from 'next/image';
 import React from 'react'
 import useStyles from './OrderCard.styles';
 
-const OrderCard = () => {
+type User = {
+    name: string;
+    avatar: string;
+    rating: number;
+    deals: number;
+}
+
+type Bean = {
+    image: string;
+    type: string;
+    origin: string;
+    grade: string | number;
+    state: 'Roasted' | 'Green';
+}
+
+type Order = {
+    id: number;
+    price: number;
+    quantity: number;
+    total: number;
+    orderedBy: User;
+    bean: Bean;
+}
+
+type OrderCardProps = {
+    order?: Order;
+}
+
+const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
     const { classes, cx } = useStyles();
 
     return (
