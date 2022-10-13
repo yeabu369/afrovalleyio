@@ -19,7 +19,7 @@ type Bean = {
     state: 'Roasted' | 'Green';
 }
 
-type Order = {
+export type Order = {
     id: number;
     price: number;
     quantity: number;
@@ -46,22 +46,22 @@ const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
         >
             <Grid gutter="xs">
                 <Grid.Col p={0} span={3}>
-                    <Image src="/Green-Beans-Image.png" width={150} height={150} alt="Green Beans" />
-                    <Avatar mt={-42} ml={126} src="/farmer.png" radius="xl" className={classes.avatar} />
+                    <Image src={order?.bean.image || "/Green-Beans-Image.png"} width={150} height={150} alt="Green Beans" />
+                    <Avatar mt={-42} ml={126} src={order?.orderedBy.avatar || "/farmer.png"} radius="xl" className={classes.avatar} />
                 </Grid.Col>
                 <Grid.Col span={9}>
                     <Group position="apart">
-                        <Text size="sm" weight="bold" variant="gradient" gradient={{ from: 'green', to: 'cyan' }}>Green Beans</Text>
+                        <Text size="sm" weight="bold" variant="gradient" gradient={{ from: 'green', to: 'cyan' }}>{order?.bean.type}</Text>
                         <IconBuildingStore size={20} />
                     </Group>
                     <Stack spacing={0}>
-                        <Text size="lg">Crop Source • Coffee Arabica</Text>
-                        <Text color="dimmed" size="sm">Origin - Yirgacheffe • Grade - 4</Text>
+                        <Text size="lg">Crop Source • {order?.bean.type}</Text>
+                        <Text color="dimmed" size="sm">Origin - {order?.bean.origin} • Grade - {order?.bean.grade}</Text>
                     </Stack>
                     <Group position="apart" mt={20}>
-                        <Text size="sm" weight={600}>Husen Abadega</Text>
+                        <Text size="sm" weight={600}>{order?.orderedBy.name}</Text>
                         <Text size="xl" weight="bold">
-                            $ 7.49
+                            $ {order?.price || 0}
                             <Text color="dimmed" component="span" weight="normal">/ Kilo</Text>
                         </Text>
                     </Group>
@@ -69,21 +69,21 @@ const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
                         <Group>
                             <IconStar size={16} />
                             <Text weight={600} sx={{ display: "flex" }} ml={2} size="xs">
-                                4.89
+                                {order?.orderedBy.rating || 0}
                                 <Text color="dimmed">
-                                    (82 deals)
+                                    ({order?.orderedBy.deals || 0})  deals
                                 </Text>
                             </Text>
                         </Group>
                         <Group>
                             <IconSeeding size={16} />
                             <Text size="xs" color="dimmed" weight="bold">
-                                2100 Kg (available)
+                                {order?.quantity || 0} Kg (available)
                             </Text>
                         </Group>
                         <Group>
                             <Text size="md">
-                                Total $15,729
+                                Total ${order?.total || 0}
                             </Text>
                         </Group>
                     </Group>
