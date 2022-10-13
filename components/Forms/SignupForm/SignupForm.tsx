@@ -41,38 +41,36 @@ const SignupForm: React.FC<any> = ({ form }) => {
             })}
         >
             <Paper withBorder shadow="md" p={30} radius="md" >
-                <form onSubmit={form.onSubmit((values: any) => console.log(values))}>
-                    <TextInput
-                        label="First Name"
-                        placeholder="First Name"
-                        required
-                        {...form.getInputProps('firstname')}
-                    />
-                    <TextInput
-                        label="Last Name"
-                        placeholder="Last Name"
-                        required
-                        mt="md"
-                        {...form.getInputProps('lastname')}
-                    />
-                    <Autocomplete
-                        value={value}
-                        data={data}
-                        onChange={handleChange}
-                        rightSection={loading ? <Loader size={16} /> : null}
-                        label="Email"
-                        placeholder="you@afrovalley.io"
-                        mt="md"
-                        required
-                        {...form.getInputProps('email')}
-                    />
-                    <PasswordInput
-                        label="Password"
-                        placeholder="Your password"
-                        required mt="md"
-                        {...form.getInputProps('password')}
-                    />
-                </form>
+                <TextInput
+                    label="First Name"
+                    placeholder="First Name"
+                    required
+                    {...form.getInputProps('firstname')}
+                />
+                <TextInput
+                    label="Last Name"
+                    placeholder="Last Name"
+                    required
+                    mt="md"
+                    {...form.getInputProps('lastname')}
+                />
+                <Autocomplete
+                    value={value}
+                    data={data}
+                    onChange={handleChange}
+                    rightSection={loading ? <Loader size={16} /> : null}
+                    label="Email"
+                    placeholder="you@afrovalley.io"
+                    mt="md"
+                    required
+                    {...form.getInputProps('email')}
+                />
+                <PasswordInput
+                    label="Password"
+                    placeholder="Your password"
+                    required mt="md"
+                    {...form.getInputProps('password')}
+                />
             </Paper>
 
         </Box>
