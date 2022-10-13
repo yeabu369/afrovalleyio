@@ -44,52 +44,55 @@ export default function GetStarted() {
       >
         Get Started
       </Title>
-      <Stepper size="xs" active={active} onStepClick={setActive} breakpoint="sm">
-        <Stepper.Step icon={<IconUserCheck size={18} />} label="First step" description="Create an account" allowStepSelect={active > 0}>
-          <SignupForm form={form} />
-        </Stepper.Step>
-        <Stepper.Step icon={<IconMailOpened size={18} />} label="Second step" description="Verify email" allowStepSelect={active > 1}>
-          <VerificationForm form={form} />
-        </Stepper.Step>
-        <Stepper.Step icon={<IconSettings size={18} />} label="Third step" description="Update Preferences" allowStepSelect={active > 2}>
-          <PreferenceForm form={form} />
-        </Stepper.Step>
-        <Stepper.Step icon={<IconShieldCheck size={18} />} label="Final step" description="Get full access" allowStepSelect={active > 3}>
-          <Box
-            sx={(theme) => ({
-              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-              paddingLeft: (theme.spacing.xl) * 10,
-              paddingRight: (theme.spacing.xl) * 10,
-              paddingTop: (theme.spacing.xl) * 2,
-              paddingBottom: (theme.spacing.xl) * 2,
-              borderRadius: theme.radius.md,
-              cursor: 'pointer',
+      <form onSubmit={form.onSubmit((values) => console.log("Values", values))}>
+        <Stepper size="xs" active={active} onStepClick={setActive} breakpoint="sm">
+          <Stepper.Step icon={<IconUserCheck size={18} />} label="First step" description="Create an account" allowStepSelect={active > 0}>
+            <SignupForm form={form} />
+          </Stepper.Step>
+          <Stepper.Step icon={<IconMailOpened size={18} />} label="Second step" description="Verify email" allowStepSelect={active > 1}>
+            <VerificationForm form={form} />
+          </Stepper.Step>
+          <Stepper.Step icon={<IconSettings size={18} />} label="Third step" description="Update Preferences" allowStepSelect={active > 2}>
+            <PreferenceForm form={form} />
+          </Stepper.Step>
+          <Stepper.Step icon={<IconShieldCheck size={18} />} label="Final step" description="Get full access" allowStepSelect={active > 3}>
+            <Box
+              sx={(theme) => ({
+                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+                paddingLeft: (theme.spacing.xl) * 10,
+                paddingRight: (theme.spacing.xl) * 10,
+                paddingTop: (theme.spacing.xl) * 2,
+                paddingBottom: (theme.spacing.xl) * 2,
+                borderRadius: theme.radius.md,
+                cursor: 'pointer',
 
-              '&:hover': {
-                backgroundColor:
-                  theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-              },
-            })}
-          >
-            <Paper withBorder shadow="md" p={30} radius="md" >
-              <Text size="sm" mb="md">
-                You have successfully verified your email address. You can now get full access to AfroValley.
-              </Text>
-            </Paper>
-          </Box>
-        </Stepper.Step>
-        <Stepper.Completed>
-          <Center>Completed, click back button to get to previous step</Center>
-        </Stepper.Completed>
-      </Stepper>
+                '&:hover': {
+                  backgroundColor:
+                    theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+                },
+              })}
+            >
+              <Paper withBorder shadow="md" p={30} radius="md" >
+                <Text size="sm" mb="md">
+                  You have successfully verified your email address. You can now get full access to AfroValley.
+                </Text>
+              </Paper>
+            </Box>
+          </Stepper.Step>
+          <Stepper.Completed>
+            <Center>Completed, click back button to get to previous step</Center>
+          </Stepper.Completed>
+        </Stepper>
 
-      <Group position="center" mt="xl">
-        <Button variant="default" onClick={prevStep}>Back</Button>
-        {(active === 3) ? (
-          <Button type="submit" variant="gradient" gradient={{ from: 'green', to: 'cyan' }} onClick={nextStep}>Submit</Button>) :
-          <Button variant="gradient" gradient={{ from: 'green', to: 'cyan' }} onClick={nextStep}>Next step</Button>
-        }
-      </Group>
+        <Group position="center" mt="xl">
+          <Button variant="default" onClick={prevStep}>Back</Button>
+          {(active === 3) ? (
+            <Button type="submit" variant="gradient" gradient={{ from: 'green', to: 'cyan' }}>Submit</Button>) :
+            <Button variant="gradient" gradient={{ from: 'green', to: 'cyan' }} onClick={nextStep}>Next step</Button>
+          }
+        </Group>
+      </form>
+
     </Container >
   );
 }
