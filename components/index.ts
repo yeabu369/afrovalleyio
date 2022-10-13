@@ -7,3 +7,4 @@ export { default as Signup } from './Signup/Signup';
 export { default as AfroValleyLogo } from './Logo/Logo';
 export { default as ButtonCheckboxes } from './ButtonCheckbox/ButtonCheckbox';
 export { default as Market } from './Market/Market';
+export { default as Navbar } from './Navbar/Navbar';
