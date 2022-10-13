@@ -1,12 +1,16 @@
 import { Stack } from '@mantine/core'
 import React from 'react'
 import OrderCard from './OrderCard/OrderCard'
+import { Order } from '../OrderCards/OrderCard/OrderCard';
 
-const OrderCards = () => {
+type Orders = {
+  orders: Order[]
+}
+
+const OrderCards: React.FC<Orders> = ({orders}) => {
   return (
     <Stack spacing="md">
-      <OrderCard />
-      <OrderCard />
+      {orders.map(order => <OrderCard order={order} key={order.id} />)}
     </Stack>
   )
 }
