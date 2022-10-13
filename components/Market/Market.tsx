@@ -6,6 +6,48 @@ import CropGradingPicker from '../CropGradingPicker/CropGradingPicker';
 import CropTypePicker from '../CropTypePicker/CropTypePicker';
 
 import OrderCards from '../OrderCards/OrderCards';
+import { Order } from '../OrderCards/OrderCard/OrderCard';
+
+const orders: Order[] = [
+  {
+    id: 1,
+    bean: {
+      grade: 1,
+      image: "",
+      origin: "Yirga Cheffe",
+      state: "Green",
+      type: "Coffee Arabica"
+    },
+    orderedBy: {
+      avatar: "",
+      deals: 82,
+      name: "Hussen Abadega",
+      rating: 4.8,
+    },
+    price: 7.49,
+    quantity: 1000,
+    total: 7490
+  },
+  {
+    id: 1,
+    bean: {
+      grade: 1,
+      image: "",
+      origin: "Yirga Cheffe",
+      state: "Green",
+      type: "Coffee Arabica"
+    },
+    orderedBy: {
+      avatar: "",
+      deals: 82,
+      name: "Hussen Abadega",
+      rating: 4.8,
+    },
+    price: 7.49,
+    quantity: 1000,
+    total: 7490
+  },
+]
 
 const Market = () => {
   const [loading, setLoading] = useState(false);
@@ -31,7 +73,7 @@ const Market = () => {
             </Grid.Col>
             <Grid.Col span={12}>
               {/* Coffee Order list */}
-              <OrderCards />
+              <OrderCards orders={orders}/>
             </Grid.Col>
           </Grid>
         </Skeleton>
