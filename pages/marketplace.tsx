@@ -11,6 +11,7 @@ const Marketplace: NextPage & { getLayout: Function } = () => {
         <meta name="description" content="Afrovalley Marketplace" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <Market />
     </div>
   )
