@@ -154,7 +154,7 @@ export default function DoubleNavbar() {
     <Anchor
       className={cx(classes.link, { [classes.linkActive]: activeLink === link })}
       href="/"
-      onClick={(event) => {
+      onClick={(event: any) => {
         event.preventDefault();
         setActiveLink(link);
       }}
