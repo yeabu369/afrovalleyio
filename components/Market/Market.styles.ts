@@ -1,6 +1,9 @@
 import { createStyles } from "@mantine/core";
 
 export default createStyles((theme) => ({
+    orders: {
+        overflowY: "hidden",
+    },
     border: {
         border: `2px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
     },
