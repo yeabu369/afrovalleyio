@@ -51,7 +51,7 @@ const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
                 </Grid.Col>
                 <Grid.Col span={9}>
                     <Group position="apart">
-                        <Text size="sm" weight="bold" variant="gradient" gradient={{ from: 'green', to: 'cyan' }}>{order?.bean.type}</Text>
+                        <Text size="sm" weight="bold" variant="gradient" gradient={{ from: 'green', to: 'cyan' }}>{order?.bean.state} Beans</Text>
                         <IconBuildingStore size={20} />
                     </Group>
                     <Stack spacing={0}>
@@ -71,7 +71,7 @@ const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
                             <Text weight={600} sx={{ display: "flex" }} ml={2} size="xs">
                                 {order?.orderedBy.rating || 0}
                                 <Text color="dimmed">
-                                    ({order?.orderedBy.deals || 0})  deals
+                                    ({`${order?.orderedBy.deals || 0} deals`})  
                                 </Text>
                             </Text>
                         </Group>
