@@ -150,8 +150,7 @@ export default function HeaderMegaMenu() {
             <a href="#" className={classes.link}>
               Stock
             </a>
-            <a href="#" classNa
-            me={classes.link}>
+            <a href="#" className={classes.link}>
               Chat
             </a>
           </Group>
