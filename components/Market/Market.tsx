@@ -47,6 +47,25 @@ const orders: Order[] = [
     quantity: 1000,
     total: 7490
   },
+  {
+    id: 1,
+    bean: {
+      grade: 1,
+      image: "",
+      origin: "Yirga Cheffe",
+      state: "Green",
+      type: "Coffee Arabica"
+    },
+    orderedBy: {
+      avatar: "",
+      deals: 82,
+      name: "Hussen Abadega",
+      rating: 4.8,
+    },
+    price: 7.49,
+    quantity: 1000,
+    total: 7490
+  }
 ]
 
 const Market = () => {
@@ -54,7 +73,7 @@ const Market = () => {
   const { classes, cx } = useStyles();
 
   return (
-    <SimpleGrid cols={2} spacing={0} className={clsx(classes.border, classes.hScreen)}>
+    <SimpleGrid cols={2} spacing={0} className={cx(classes.hScreen)}>
       <Box p={20} className={classes.flex}>
         <Skeleton className={cx(classes.hFull)} visible={loading}>
           <Grid>
@@ -71,7 +90,7 @@ const Market = () => {
                 proposals in area of map
               </Text>
             </Grid.Col>
-            <Grid.Col span={12}>
+            <Grid.Col span={12} className={classes.orders}>
               {/* Coffee Order list */}
               <OrderCards orders={orders}/>
             </Grid.Col>
