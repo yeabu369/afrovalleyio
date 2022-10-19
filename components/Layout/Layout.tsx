@@ -1,10 +1,11 @@
+import { Box } from '@mantine/core'
 import React from 'react'
-import type { NextPage } from 'next'
-
 
 const Layout = ({ children }: any) => {
     return (
-        <main>{children}</main>
+        <Box component="main">
+            {children}
+        </Box>
     )
 }
 
