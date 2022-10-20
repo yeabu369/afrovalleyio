@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, Button, Container, Grid, Group, Image, Stack, Text, TextInput, Title } from '@mantine/core'
+import { Anchor, Avatar, Badge, Box, Button, Container, Divider, Grid, Group, Image, Stack, Text, TextInput, Title } from '@mantine/core'
 import { IconBuilding, IconChevronRight, IconMessageDots, IconPlant2, IconShare, IconShieldCheck, IconStar, IconStarHalf } from '@tabler/icons';
 import useStyles from './OrderContainer.styles';
 import CropShowcase from "./CropShowcase/CropShowcase";
@@ -76,11 +76,11 @@ const OrderContainer = () => {
                         </Group>
                     </Stack>
                 </Grid.Col>
-                <Grid.Col className={classes.userInfo} span={8} style={{ border: "1px solid #000" }}>
+                <Grid.Col className={classes.userInfo} span={8}>
                     <Title order={4}>Crop source owner</Title>
-                    <Grid m={0} style={{ border: "1px solid #000" }}>
-                        <Grid.Col style={{ border: "1px solid #000" }} span={7}>
-                            <Group style={{ border: "1px solid #000" }}>
+                    <Grid pt="sm" m={0}>
+                        <Grid.Col span={7} className={classes.borderBottom}>
+                            <Group>
                                 <Avatar radius="xl" src="">H</Avatar>
                                 <Stack spacing={0}>
                                     <Group position="apart">
@@ -104,14 +104,14 @@ const OrderContainer = () => {
                                 <Text size="sm">
                                     Friends, thank you for the support of Ethiopia to the world, thank you for your financial help! Since March 3, by booking my coffee, you have been helping us to survive in such a difficult situation.
                                 </Text>
-                                <Button component="a" className={classes.link} variant="subtle">
-                                    <Text>Show more</Text> 
-                                    <IconChevronRight size={14} />
-                                </Button>
+                                <Anchor component="a" className={classes.link}>
+                                    <Text weight="bold" style={{ textDecoration: "underlined" }}>Show more</Text> 
+                                    <IconChevronRight size={16} />
+                                </Anchor>
                             </Group>
                         </Grid.Col>
-                        <Grid.Col style={{ border: "1px solid #000" }} span={5}>
-                            <Group spacing={8} style={{ border: "1px solid #000" }}>
+                        <Grid.Col span={5} className={classes.borderBottom}>
+                            <Group spacing={8}>
                                 <Text size="sm">Trading Since: February 2024</Text>
                                 <Group className={classes.wFull}>
                                     <IconStar size={14} />

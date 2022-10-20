@@ -28,13 +28,19 @@ export default createStyles((theme) => ({
     },
     userInfo: {
         paddingTop: "1.5rem",
+        borderBottom: `1px solid ${theme.colorScheme === "dark" ? theme.colors.gray[4] : theme.colors.gray[3]}`,
     },
     button: {
         height: "3.125rem",
         width: "100%",
     },
     link: {
+        display: "flex",
+        alignItems: "center",
         textDecoration: "underlined",
-        color: theme.colors.dark
+        color: theme.colors.dark,
+    },
+    borderBottom: {
+        borderBottom: `1px solid ${theme.colorScheme === "dark" ? theme.colors.gray[4] : theme.colors.gray[3]}`,
     }
 }));
