@@ -1,4 +1,4 @@
-import { Anchor, Avatar, Badge, Box, Button, Container, Divider, Grid, Group, Image, Stack, Text, TextInput, Title } from '@mantine/core'
+import { Anchor, Avatar, Badge, Box, Button, Container, Divider, Grid, Group, Image, Skeleton, Stack, Text, TextInput, Title } from '@mantine/core'
 import { IconBuilding, IconChevronRight, IconMessageDots, IconPlant2, IconShare, IconShieldCheck, IconStar, IconStarHalf } from '@tabler/icons';
 import useStyles from './OrderContainer.styles';
 import CropShowcase from "./CropShowcase/CropShowcase";
@@ -105,7 +105,7 @@ const OrderContainer = () => {
                                     Friends, thank you for the support of Ethiopia to the world, thank you for your financial help! Since March 3, by booking my coffee, you have been helping us to survive in such a difficult situation.
                                 </Text>
                                 <Anchor component="a" className={classes.link}>
-                                    <Text weight="bold" style={{ textDecoration: "underlined" }}>Show more</Text> 
+                                    <Text weight="bold" style={{ textDecoration: "underlined" }}>Show more</Text>
                                     <IconChevronRight size={16} />
                                 </Anchor>
                             </Group>
@@ -125,6 +125,75 @@ const OrderContainer = () => {
                                 </Group>
                                 <Button component="a" variant="outline" color="dark" rightIcon={<IconMessageDots size={14} />}>Contact me</Button>
                             </Group>
+                        </Grid.Col>
+                        <Grid.Col pt="xl" span={12}>
+                            <Title order={4}>Specification</Title>
+                            <Grid pt="xl" pb="xl" className={classes.borderBottom}>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Crop Quality</Text>
+                                    <Text weight={600} size="sm">A</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Screen Size</Text>
+                                    <Text weight={600} size="sm">13</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Cup Taste</Text>
+                                    <Text weight={600} size="sm">Sweet</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Initial Grading</Text>
+                                    <Text weight={600} size="sm">4</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Moisture</Text>
+                                    <Text weight={600} size="sm">0,1</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Crop Year</Text>
+                                    <Text weight={600} size="sm">2022</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Crop Quantity</Text>
+                                    <Text weight={600} size="sm">5000 Kg</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Primary Process Method</Text>
+                                    <Text weight={600} size="sm">Natural and dehusked</Text>
+                                </Grid.Col>
+                            </Grid>
+                        </Grid.Col>
+                        <Grid.Col pt="xl" span={12}>
+                            <Title order={4}>Environment</Title>
+                            <Grid pt="xl" pb="xl" className={classes.borderBottom}>
+                                <Grid.Col span={12} className={classes.wFull}>
+                                    <Skeleton height={200} />
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Region</Text>
+                                    <Text weight={600} size="sm">Oromia, Ethiopia</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Origin</Text>
+                                    <Text weight={600} size="sm">Gomma, Jimma</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Soil Type</Text>
+                                    <Text weight={600} size="sm">Forest (Dark) Soil</Text>
+                                </Grid.Col>
+                                <Grid.Col span={4} className={classes.wFull}>
+                                    <Text size="sm">Altitude</Text>
+                                    <Text weight={600} size="sm">Above 2200</Text>
+                                </Grid.Col>
+                            </Grid>
+                        </Grid.Col>
+                        <Grid.Col pt="xl" span={12}>
+                            <Title order={4}>The crop reviews • 7</Title>
+                            <Grid pt="xl" pb="xl" className={classes.borderBottom}>
+                                <Grid.Col span={12} className={classes.wFull}>
+                                    <Skeleton height={200} />
+                                </Grid.Col>
+                            </Grid>
                         </Grid.Col>
                     </Grid>
                 </Grid.Col>
