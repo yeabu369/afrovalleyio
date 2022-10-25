@@ -2,6 +2,7 @@ import { Anchor, Avatar, Badge, Box, Button, Container, Divider, Grid, Group, Im
 import { IconBuilding, IconChevronRight, IconMessageDots, IconPlant2, IconShare, IconShieldCheck, IconStar, IconStarHalf } from '@tabler/icons';
 import useStyles from './OrderContainer.styles';
 import CropShowcase from "./CropShowcase/CropShowcase";
+import OrderForm from '../Forms/OrderForm/OrderForm';
 
 const OrderContainer = () => {
     const { cx, classes } = useStyles();
@@ -11,7 +12,7 @@ const OrderContainer = () => {
             <Grid className={classes.grid} m={0}>
                 <Grid.Col className={classes.col} span={12}>
                     <Text size="sm" weight="bold" variant="gradient" gradient={{ from: "darkgreen", to: "cyan" }}>Green Coffee Bean</Text>
-                </Grid.Col>
+                </Grid.Col> 
                 <Grid.Col className={classes.col} span={12}>
                     <Title order={2}>Crop Source • Coffee Arabica</Title>
                 </Grid.Col>
@@ -29,52 +30,7 @@ const OrderContainer = () => {
                     <CropShowcase />
                 </Grid.Col>
                 <Grid.Col className={classes.order} span={4}>
-                    <Stack spacing={6} p="md" className={classes.orderPanel}>
-                        <Group position="apart" >
-                            <Title order={2} >
-                                $7,49
-                                <Text component="span" size="sm" weight="normal" color="dimmed">
-                                    /kilo
-                                </Text>
-                            </Title>
-                            <Text color="dimmed" weight="600" size="lg" style={{ textDecoration: "line-through" }}>$12.95</Text>
-                        </Group>
-                        <Group spacing="xs">
-                            <IconPlant2 size={18} />
-                            <Text size="xs">
-                                5000Kg{" "}
-                                <Text color="dimmed" component="span">
-                                    (available)
-                                </Text>
-                            </Text>
-                        </Group>
-                        <Group position="apart" pt={32} spacing="xs">
-                            <Text size="xs">
-                                Quantity (kg)
-                            </Text>
-                            <TextInput className={classes.wFull} placeholder="0" rightSection={<Text>Kg</Text>} />
-                            <Group className={classes.wFull} position="apart">
-                                <Text size="xs">$7,49 x  600 kilo</Text>
-                                <Text size="xs">$7344,25</Text>
-                            </Group>
-                            <Group className={classes.wFull} position="apart">
-                                <Text size="xs">Discount (special price)</Text>
-                                <Text size="xs">-$200,00</Text>
-                            </Group>
-                            <Group className={classes.wFull} position="apart">
-                                <Text size="xs">Delivery type FOB (Free on Board)</Text>
-                                <Text size="xs">$0,00</Text>
-                            </Group>
-                            <Group pt="md" pb="lg" className={classes.wFull} style={{ borderBottom: "1px solid #333" }} position="apart">
-                                <Text size="md" weight={600}>Total Price:</Text>
-                                <Text size="md">$7144,25</Text>
-                            </Group>
-                            <Group spacing="sm" mt={60}>
-                                <Button variant="gradient" className={classes.button} style={{ border: "1px solid #333" }} gradient={{ from: "black", to: "darkgreen" }}>Place a bulk order</Button>
-                                <Button variant="outline" className={classes.button} style={{ border: "2px solid #000" }} color="dark">Take a sample</Button>
-                            </Group>
-                        </Group>
-                    </Stack>
+                    <OrderForm />
                 </Grid.Col>
                 <Grid.Col className={classes.userInfo} span={8}>
                     <Title order={4}>Crop source owner</Title>
