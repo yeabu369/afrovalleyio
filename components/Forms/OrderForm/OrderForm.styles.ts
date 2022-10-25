@@ -26,9 +26,25 @@ export default createStyles((theme) => ({
     wFull: {
         width: '100%',
     },
-    modalButton: {
+    orderButton: {
         height: '10rem',
+        background: theme.colors.dark,
+
+        "&:hover": {
+            background: theme.colors.dark[6],
+        },
+
     },
+    orderMoreButton: {
+        height: '10rem',
+        background: theme.colors.gray[0],
+        border: `2px solid ${theme.colorScheme === 'dark' ? theme.colors.gray[4] : theme.colors.dark[3]}`,
+        color: theme.colorScheme === 'dark' ? theme.colors.gray[4] : theme.colors.dark[3],
+
+        "&:hover": {
+            background: theme.colors.gray[1],
+        },
+    },  
     flex: {
         display: 'flex',
     }

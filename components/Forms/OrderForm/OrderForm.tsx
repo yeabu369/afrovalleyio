@@ -75,24 +75,29 @@ const OrderForm = () => {
             <Modal
                 opened={bulkOrderModalOpened}
                 onClose={() => setBulkOrderModalOpened(false)}
-                title="Would you like to add more crops of this farmer?!"
+                title={<Title size="sm" order={3}>Would you like to add more crops of this farmer?</Title>}
                 centered
+                size="auto"
             >
-                <Group position="apart" className={classes.flex} style={{ border: "1px solid #000" }}>
+                <Group position="apart">
                     <Button
                         leftIcon={<IconPlant2 />}
-                        className={classes.modalButton}
-                        radius ="lg"
+                        className={classes.orderButton}
+                        radius="lg"
+                        type="submit"
                     >
                         Order only this crop
                     </Button>
                     <Button
+                        variant="outline"
                         leftIcon=
-                        {<>
-                            <IconSeeding />
-                            <IconPlus />
-                        </>}
-                        className={classes.modalButton}
+                        {
+                            <>
+                                <IconSeeding />
+                                <IconPlus size={14} />
+                            </>
+                        }
+                        className={classes.orderMoreButton}
                         radius="lg"
                     >
                         Order more crops
