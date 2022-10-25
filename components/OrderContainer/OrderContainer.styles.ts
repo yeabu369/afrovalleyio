@@ -2,7 +2,6 @@ import { createStyles } from "@mantine/core";
 
 export default createStyles((theme) => ({
     container: {
-        border: `2px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
         height: "100%",
     },  
     grid: {
@@ -17,11 +16,6 @@ export default createStyles((theme) => ({
     },
     order: {
         paddingTop: "1.25rem",
-    },
-    orderPanel: {
-        height: "100%",
-        borderRadius: theme.radius.md,
-        border: `1px solid ${theme.colorScheme === "dark" ? theme.colors.gray[4] : theme.colors.gray[3]}`,
     },
     wFull: {
         width: "100%"
