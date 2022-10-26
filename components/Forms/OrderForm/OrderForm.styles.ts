@@ -47,5 +47,13 @@ export default createStyles((theme) => ({
     },  
     flex: {
         display: 'flex',
-    }
+    },
+    confirmOrderButton: {
+        width: "17.5rem",
+        height: "3.125rem",
+
+        "&:hover": {
+            background: theme.colors.dark,
+        },
+    },
 })); 
