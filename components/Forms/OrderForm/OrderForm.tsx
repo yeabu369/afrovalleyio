@@ -1,11 +1,12 @@
-import { Button, Group, Modal, NumberInput, Stack, Text, TextInput, Title } from '@mantine/core'
-import { IconPlant2, IconPlus, IconSeeding } from '@tabler/icons'
+import { Anchor, Button, Checkbox, Divider, Grid, Group, Modal, NumberInput, Select, Stack, Text, TextInput, Title } from '@mantine/core'
+import { IconChevronDown, IconChevronRight, IconCurrencyDollar, IconPlant2, IconPlus, IconSeeding } from '@tabler/icons'
 import React, { useState } from 'react'
 import useStyles from './OrderForm.styles'
+import countries from '../../../data/countries'
 
 const OrderForm = () => {
     const [bulkOrderModalOpened, setBulkOrderModalOpened] = useState(false);
-    const [sampleOrderModalOpened, setSampleOrderModalOpened] = useState(false);
+    const [sampleOrderModalOpened, setSampleOrderModalOpened] = useState(true);
     const { cx, classes } = useStyles();
 
     return (
@@ -46,7 +47,7 @@ const OrderForm = () => {
                         <Text size="xs">Delivery type FOB (Free on Board)</Text>
                         <Text size="xs">$0,00</Text>
                     </Group>
-                    <Group pt="md" pb="lg" className={classes.wFull} style={{ borderBottom: "1px solid #333" }} position="apart">
+                    <Group pt="md" pb="lg" className={classes.wFull} position="apart">
                         <Text size="md" weight={600}>Total Price:</Text>
                         <Text size="md">$7144,25</Text>
                     </Group>
@@ -107,13 +108,150 @@ const OrderForm = () => {
             <Modal
                 opened={sampleOrderModalOpened}
                 onClose={() => setSampleOrderModalOpened(false)}
-                title="Would you like to add more crops of this farmer?!"
+                title=<Title order={2} weight={600}>Taking a sample</Title>
                 centered
+                size="lg"
             >
-                <Group>
-                    <Button>Order only this crop</Button>
-                    <Button>Order more crops</Button>
-                </Group>
+                <form>
+                    <Group>
+                        <Grid >
+                            <Grid.Col>
+                                <Text size="lg">Contact details</Text>
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    label="First Name"
+                                    placeholder="John"
+                                    required
+                                    className={classes.wFull}
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    label="Last Name"
+                                    placeholder="Doe"
+                                    required
+                                    className={classes.wFull}
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={12}>
+                                <Text size="lg">Address</Text>
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <Select
+                                    data={countries}
+                                    className={classes.wFull}
+                                    placeholder="Select country"
+                                    required
+                                    label="Country/Region"
+                                    searchable
+                                    rightSection={<IconChevronDown />}
+                                />
+
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    className={classes.wFull}
+                                    placeholder="Berlin"
+                                    label="City"
+                                />
+
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    className={classes.wFull}
+                                    placeholder="Lower Saxony (Niedersachsen)"
+                                    label="State/Province/Region"
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    className={classes.wFull}
+                                    placeholder="11015"
+                                    label="Zip Code"
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    className={classes.wFull}
+                                    placeholder="Mohrenstrasse 37 10117 Berlin"
+                                    label="Street Address"
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    className={classes.wFull}
+                                    placeholder="+49 211 5684962"
+                                    label="Phone number"
+                                />
+                                <Text size={10}>May be used to assist delivery</Text>
+                            </Grid.Col>
+                            <Grid.Col span={12}>
+                                <Text size="lg">Crops</Text>
+                            </Grid.Col>
+                            <Grid.Col span={12}>
+                                <Text size="sm">Djimma Gomma Awol G1 Natural</Text>
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    className={classes.wFull}
+                                    placeholder="1,00"
+                                    label="Capacity (Kilo)"
+                                    required
+                                />
+                                <Text size={10}>* The sample of coffee can&apos;t be more than 2 kilos</Text>
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <TextInput
+                                    className={classes.wFull}
+                                    placeholder="1,00"
+                                    icon={<IconCurrencyDollar size={14} />}
+                                    label="Total Price"
+                                    required
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={12}>
+                                <Anchor className={classes.link}>
+                                    <Text weight={600} underline >Add more</Text>
+                                    <IconChevronRight size={16} />
+                                </Anchor>
+                            </Grid.Col>
+                            <Grid.Col span={6}>
+                                <Stack spacing="sm">
+                                    <Group position="apart">
+                                        <Text size="sm" underline color="dimmed" style={{ textDecoration: "underlined" }}>$ 18.25 x 1 kilo</Text>
+                                        <Text size="sm" color="dimmed">$ 18,25</Text>
+                                    </Group>
+                                    <Group position="apart">
+                                        <Text size="sm" underline color="dimmed">Discount (special price)</Text>
+                                        <Text size="sm" color="dimmed">-$ 3,00</Text>
+                                    </Group>
+                                    <Group position="apart">
+                                        <Text size="sm" underline color="dimmed">Delivery price (DHL)</Text>
+                                        <Text size="sm" color="dimmed">$ 20,00</Text>
+                                    </Group>
+                                </Stack>
+                                <Group mt="xl" position="apart">
+                                    <Text size="md">Total Price: </Text>
+                                    <Text size="md">$ 50,50</Text>
+                                </Group>
+                            </Grid.Col>
+                            <Grid.Col pt="sm" pb="sm" span={12}>
+                                <Divider />
+                            </Grid.Col>
+                            <Grid.Col span={12}>
+                                <Group position="center">
+                                    <Checkbox label="Accept Terms & Conditions" />
+                                </Group>
+                            </Grid.Col>
+                            <Grid.Col span={12}>
+                                <Group position="center">
+                                    <Button className={classes.confirmOrderButton} variant="gradient" gradient={{ from: "black", to: "darkgreen" }} radius="sm" type="submit">Confirm Order</Button>
+                                </Group>
+                            </Grid.Col>
+                        </Grid>
+                    </Group>
+                </form>
             </Modal>
         </>
     )
