@@ -21,9 +21,7 @@ const Home: NextPage & { getLayout: Function } = () => {
 Home.getLayout = function getLayout(page: NextPage) {
   return (
     <Layout>
-      <Header />
       {page}
-      <Footer data={content.data} />
     </Layout>
   )
 }
