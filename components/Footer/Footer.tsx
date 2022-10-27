@@ -1,6 +1,6 @@
 import { Text, Container, ActionIcon, Group } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandTelegram } from '@tabler/icons';
-import AfroValleyLogo from '../Logo/Logo';
+import AfroValleyLogo from '../Logo/LogoWithText';
 import useStyles from './Footer.styles';
 
 interface FooterLinksProps {
