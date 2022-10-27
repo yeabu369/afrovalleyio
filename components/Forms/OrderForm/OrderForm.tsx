@@ -6,7 +6,7 @@ import countries from '../../../data/countries'
 
 const OrderForm = () => {
     const [bulkOrderModalOpened, setBulkOrderModalOpened] = useState(false);
-    const [sampleOrderModalOpened, setSampleOrderModalOpened] = useState(true);
+    const [sampleOrderModalOpened, setSampleOrderModalOpened] = useState(false);
     const { cx, classes } = useStyles();
 
     return (
@@ -145,7 +145,7 @@ const OrderForm = () => {
                                     required
                                     label="Country/Region"
                                     searchable
-                                    rightSection={<IconChevronDown />}
+                                    rightSection={<IconChevronDown size={14} />}
                                 />
 
                             </Grid.Col>
