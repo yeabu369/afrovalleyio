@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Stepper, Button, Group, Box, Container, Center, Title, Text, Paper, TextInput, PasswordInput, Stack, Autocomplete, Loader } from '@mantine/core';
 import { IconMailOpened, IconSettings, IconShieldCheck, IconUserCheck } from '@tabler/icons';
-import AfroValleyLogo from '../Logo/Logo';
+import AfroValleyLogo from '../Logo/LogoWithText';
 import SignupForm from '../Forms/SignupForm/SignupForm';
 import VerificationForm from '../Forms/VerificationForm/VerificationForm';
 import { useForm } from '@mantine/form';
@@ -24,7 +24,7 @@ export default function GetStarted() {
 
     validate: {
       firstname: (value: any) => { if (!value) return 'First name is required'; },
-      lastname: (value: any) => { if (!value) return 'Last name is required'; },
+      lastname: (value: any) => { if (!value) return 'Last name is required'; }, 
       email: (value: any) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
       password: (value: any) => { if (!value) return 'Password is required'; },
       preference: (value: any) => { if (!value) return 'Preference is required'; },
@@ -86,8 +86,8 @@ export default function GetStarted() {
 
         <Group position="center" mt="xl">
           <Button variant="default" onClick={prevStep}>Back</Button>
-          {(active === 3) ? (
-            <Button type="submit" variant="gradient" gradient={{ from: 'green', to: 'cyan' }}>Submit</Button>) :
+          {(active === 3) ?
+            <Button type="submit" variant="gradient" gradient={{ from: 'green', to: 'cyan' }}>Submit</Button> :
             <Button variant="gradient" gradient={{ from: 'green', to: 'cyan' }} onClick={nextStep}>Next step</Button>
           }
         </Group>
