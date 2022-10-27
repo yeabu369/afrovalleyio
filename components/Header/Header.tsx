@@ -27,7 +27,8 @@ import {
   IconChevronDown,
 } from '@tabler/icons';
 import Link from 'next/link';
-import AfroValleyLogo from '../Logo/Logo';
+import { useRouter } from 'next/router';
+import AfroValleyLogo from '../Logo/LogoWithText';
 import useStyles from './Header.styles';
 
 const mockdata = [
@@ -68,6 +69,8 @@ export default function HeaderMegaMenu() {
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const { classes, theme } = useStyles();
 
+  const router = useRouter();
+
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group noWrap align="flex-start">
@@ -98,7 +101,7 @@ export default function HeaderMegaMenu() {
                 Marketplace
               </a>
             </Link>
-            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+            {/* <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
                 <a href="#" className={classes.link}>
                   <Center inline>
@@ -142,7 +145,7 @@ export default function HeaderMegaMenu() {
                   </Group>
                 </div>
               </HoverCard.Dropdown>
-            </HoverCard>
+            </HoverCard> */}
             <Anchor href="/orders/1" className={classes.link}>
               Orders
             </Anchor>
@@ -184,14 +187,14 @@ export default function HeaderMegaMenu() {
             <Anchor href="/marketplace" className={classes.link}>
               Marketplace
             </Anchor>
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
+          {/* <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
                 Features
               </Box>
               <IconChevronDown size={16} color={theme.fn.primaryColor()} />
             </Center>
-          </UnstyledButton>
+          </UnstyledButton> */}
           <Collapse in={linksOpened}>{links}</Collapse>
           <Anchor href="/orders/1" className={classes.link}>
             Orders
