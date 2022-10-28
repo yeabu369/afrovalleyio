@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Footer, Header, Layout, Market } from '../components'
-import content from '../data/footer'
 
 const Marketplace: NextPage & { getLayout: Function } = () => {
   return (
@@ -20,9 +19,7 @@ const Marketplace: NextPage & { getLayout: Function } = () => {
 Marketplace.getLayout = function getLayout(page: NextPage) {
   return (
     <Layout>
-      <Header />
       {page}
-      <Footer data={content.data} />
     </Layout>
   )
 }

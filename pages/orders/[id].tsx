@@ -20,9 +20,7 @@ const Order: NextPage & { getLayout: Function } = () => {
 Order.getLayout = function getLayout(page: NextPage) {
   return (
     <Layout>
-      <Header />
       {page}
-      <Footer data={content.data} />
     </Layout>
   )
 }
