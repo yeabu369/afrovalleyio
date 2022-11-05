@@ -1,15 +1,12 @@
 import {
   Header,
-  HoverCard,
   Group,
   Button,
   UnstyledButton,
   Text,
-  SimpleGrid,
   ThemeIcon,
   Anchor,
   Divider,
-  Center,
   Box,
   Burger,
   Drawer,
@@ -152,9 +149,9 @@ export default function HeaderMegaMenu() {
             <a href="#" className={classes.link}>
               Stock
             </a>
-            <a href="#" className={classes.link}>
+            <Anchor href="/chats" className={classes.link}>
               Chat
-            </a>
+            </Anchor>
           </Group>
 
           <Group className={classes.hiddenMobile}>
@@ -167,6 +164,7 @@ export default function HeaderMegaMenu() {
             >
               Sign up
             </Button>
+            <Button component="a" href="http://3.26.66.225/" variant="subtle" color="teal">Farmer Wellfare</Button>
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} />
@@ -184,9 +182,9 @@ export default function HeaderMegaMenu() {
       >
         <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md">
           <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
-            <Anchor href="/marketplace" className={classes.link}>
-              Marketplace
-            </Anchor>
+          <Anchor href="/marketplace" className={classes.link}>
+            Marketplace
+          </Anchor>
           {/* <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
@@ -202,7 +200,7 @@ export default function HeaderMegaMenu() {
           <Anchor href="#" className={classes.link}>
             Stock
           </Anchor>
-          <Anchor href="#" className={classes.link}>
+          <Anchor href="/chats" className={classes.link}>
             Chat
           </Anchor>
 
@@ -218,6 +216,7 @@ export default function HeaderMegaMenu() {
             >
               Sign up
             </Button>
+            <Button component="a" href="http://3.26.66.225/" variant="subtle" color="teal">Farmer Welfare</Button>
           </Group>
         </ScrollArea>
       </Drawer>
