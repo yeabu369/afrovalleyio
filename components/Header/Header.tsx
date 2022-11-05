@@ -12,6 +12,9 @@ import {
   Drawer,
   Collapse,
   ScrollArea,
+  HoverCard,
+  Center,
+  SimpleGrid,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -22,6 +25,7 @@ import {
   IconFingerprint,
   IconCoin,
   IconChevronDown,
+  IconActivity,
 } from '@tabler/icons';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -30,34 +34,16 @@ import useStyles from './Header.styles';
 
 const mockdata = [
   {
-    icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
-  },
-  {
-    icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
-  },
-  {
     icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    title: 'Information Center',
+    description: 'Farmer Information Center and Production Practices',
+    link: "#"
   },
   {
-    icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
-  },
-  {
-    icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
-  },
-  {
-    icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    icon: IconActivity,
+    title: 'Welfare Services',
+    description: 'Farmer Health and Welfare Services',
+    link: "http://3.26.66.225/"
   },
 ];
 
@@ -69,7 +55,7 @@ export default function HeaderMegaMenu() {
   const router = useRouter();
 
   const links = mockdata.map((item) => (
-    <UnstyledButton className={classes.subLink} key={item.title}>
+    <UnstyledButton component="a" href={item.link} className={classes.subLink} key={item.title}>
       <Group noWrap align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
           <item.icon size={22} color={theme.fn.primaryColor()} />
@@ -98,12 +84,12 @@ export default function HeaderMegaMenu() {
                 Marketplace
               </a>
             </Link>
-            {/* <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
                 <a href="#" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
-                      Features
+                      Apps
                     </Box>
                     <IconChevronDown size={16} color={theme.fn.primaryColor()} />
                   </Center>
@@ -112,7 +98,7 @@ export default function HeaderMegaMenu() {
 
               <HoverCard.Dropdown sx={{ overflow: 'hidden' }}>
                 <Group position="apart" px="md">
-                  <Text weight={500}>Features</Text>
+                  <Text weight={500}>Apps</Text>
                   <Anchor href="#" size="xs">
                     View all
                   </Anchor>
@@ -138,11 +124,11 @@ export default function HeaderMegaMenu() {
                         Their food sources have decreased, and their numbers
                       </Text>
                     </div>
-                    <Button variant="default">Get started</Button>
+                    <Button component="a" href="/signup" variant="default">Get started</Button>
                   </Group>
                 </div>
               </HoverCard.Dropdown>
-            </HoverCard> */}
+            </HoverCard>
             <Anchor href="/orders/1" className={classes.link}>
               Orders
             </Anchor>
@@ -185,14 +171,14 @@ export default function HeaderMegaMenu() {
           <Anchor href="/marketplace" className={classes.link}>
             Marketplace
           </Anchor>
-          {/* <UnstyledButton className={classes.link} onClick={toggleLinks}>
+          <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Features
+                Apps
               </Box>
               <IconChevronDown size={16} color={theme.fn.primaryColor()} />
             </Center>
-          </UnstyledButton> */}
+          </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
           <Anchor href="/orders/1" className={classes.link}>
             Orders
