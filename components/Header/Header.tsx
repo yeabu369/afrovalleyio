@@ -23,9 +23,11 @@ import {
   IconBook,
   IconChartPie3,
   IconFingerprint,
-  IconCoin,
   IconChevronDown,
   IconActivity,
+  IconSearch,
+  IconArchive,
+  IconPlant2,
 } from '@tabler/icons';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -44,6 +46,30 @@ const mockdata = [
     title: 'Welfare Services',
     description: 'Farmer Health and Welfare Services',
     link: "http://3.26.66.225/"
+  },
+  {
+    icon: IconSearch,
+    title: 'Natural Coffee Governance',
+    description: 'Quality Check Services and Stages',
+    link: "https://docs.google.com/spreadsheets/d/10M55fHlONAotVKvOZuEKno0YEu--5trsiK619Q6yPz0/edit?usp=sharing"
+  },
+  {
+    icon: IconChartPie3,
+    title: 'Washed Coffee Governance',
+    description: 'Washed Coffee Quality Checks and Stages',
+    link: "https://docs.google.com/spreadsheets/d/1x1CAGOM4wjyIUps9ksiww4AEFwd4SxSO73tI05Q2tCk/edit?usp=sharing"
+  },
+  {
+    icon: IconFingerprint,
+    title: 'Red Cherries Quality',
+    description: 'Red Measurement -- Quality Check & Stages ',
+    link: "https://docs.google.com/spreadsheets/d/1x1CAGOM4wjyIUps9ksiww4AEFwd4SxSO73tI05Q2tCk/edit?usp=sharing"
+  },
+  {
+    icon: IconPlant2,
+    title: 'Dried Cherries Quality Measurement',
+    description: 'Dried Measurement - Quality Check & Stages',
+    link: "https://docs.google.com/spreadsheets/d/1QxtCnTPZYH07lB1uszN6hJhOVj0QN3xffcK3kae-Vy8/edit?usp=sharing"
   },
 ];
 
@@ -89,7 +115,7 @@ export default function HeaderMegaMenu() {
                 <a href="#" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
-                      Apps
+                      Apps & Features
                     </Box>
                     <IconChevronDown size={16} color={theme.fn.primaryColor()} />
                   </Center>
@@ -98,7 +124,7 @@ export default function HeaderMegaMenu() {
 
               <HoverCard.Dropdown sx={{ overflow: 'hidden' }}>
                 <Group position="apart" px="md">
-                  <Text weight={500}>Apps</Text>
+                  <Text weight={500}>Apps & Features</Text>
                   <Anchor href="#" size="xs">
                     View all
                   </Anchor>
@@ -124,7 +150,7 @@ export default function HeaderMegaMenu() {
                         Their food sources have decreased, and their numbers
                       </Text>
                     </div>
-                    <Button component="a" href="/signup" variant="default">Get started</Button>
+                    <Button component="a" href="/auth/signup" variant="default">Get started</Button>
                   </Group>
                 </div>
               </HoverCard.Dropdown>
@@ -174,7 +200,7 @@ export default function HeaderMegaMenu() {
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Apps
+                Apps & Features
               </Box>
               <IconChevronDown size={16} color={theme.fn.primaryColor()} />
             </Center>
