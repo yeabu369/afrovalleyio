@@ -39,7 +39,7 @@ const mockdata = [
     icon: IconBook,
     title: 'Information Center',
     description: 'Farmer Information Center and Production Practices',
-    link: "#"
+    link: "https://docs.google.com/spreadsheets/d/10M55fHlONAotVKvOZuEKno0YEu--5trsiK619Q6yPz0/edit?usp=sharing"
   },
   {
     icon: IconActivity,
@@ -67,7 +67,7 @@ const mockdata = [
   },
   {
     icon: IconPlant2,
-    title: 'Dried Cherries Quality Measurement',
+    title: 'Dried Cherries Quality',
     description: 'Dried Measurement - Quality Check & Stages',
     link: "https://docs.google.com/spreadsheets/d/1QxtCnTPZYH07lB1uszN6hJhOVj0QN3xffcK3kae-Vy8/edit?usp=sharing"
   },
