@@ -12,86 +12,13 @@ datasource db {
 
 // A User model for a farmer buyer market place with 4 roles
 model User {
-  id        Int       @id @default(autoincrement())
-  name      String
-  email     String    @unique
-  password  String
-  role      String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  // A user can have many products
-  products  Product[]
-  // A user can have many orders
-  orders    Order[]
-  Cart      Cart?     @relation(fields: [cartId], references: [id])
-  cartId    Int?
-  Review    Review?   @relation(fields: [reviewId], references: [id])
-  reviewId  Int?
+  id          Int       @id @default(autoincrement())
+  name        String
+  email       String    @unique
+  password    String
+  role        String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  algoAddress String
 }
 
-// A Product model for a farmer buyer market place with 4 roles
-model Product {
-  id        Int      @id @default(autoincrement())
-  name      String
-  price     Float
-  quantity  Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  // A product can have many orders
-  orders    Order[]
-  // A product can have many users
-  users     User[]
-  carts     Cart[]
-  Review    Review?  @relation(fields: [reviewId], references: [id])
-  reviewId  Int?
-  Crop      Crop?    @relation(fields: [cropId], references: [id])
-  cropId    Int?
-}
-
-// An Order model for a farmer buyer market place with 4 roles
-model Order {
-  id        Int       @id @default(autoincrement())
-  quantity  Int
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  // An order can have many products
-  products  Product[]
-  // An order can have many users
-  users     User[]
-  type      String
-}
-
-// A Cart model for a farmer buyer market place with 4 roles
-model Cart {
-  id        Int       @id @default(autoincrement())
-  quantity  Int
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  // A cart can have many products
-  products  Product[]
-  // A cart can have many users
-  users     User[]
-}
-
-// A Review model for a farmer buyer market place with 4 roles
-model Review {
-  id        Int       @id @default(autoincrement())
-  rating    Int
-  comment   String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  // A review can have many products
-  products  Product[]
-  // A review can have many users
-  users     User[]
-}
-
-// A Crop Model that will be used to create a crop
-model Crop {
-  id        Int       @id @default(autoincrement())
-  name      String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  // A crop can have many products
-  products  Product[]
-}
