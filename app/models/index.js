@@ -6,5 +6,7 @@ const db = {};
 
 db.mongoose = mongoose;
 db.user = require('./user.model');
+db.crop = require('./crop.model');
+db.stock = require('./stock.model');
 
 module.exports = db;
