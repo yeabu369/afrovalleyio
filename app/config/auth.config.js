@@ -1,3 +1,3 @@
 module.exports = {
-  secret: "av-secret-key"
+  secret: 'av-secret-key',
 };
