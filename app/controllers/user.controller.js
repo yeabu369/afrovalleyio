@@ -23,7 +23,7 @@ exports.emailVerification = (req, res) => {
 exports.updateProfile = async (req, res) => {
   const user = User.findOneAndUpdate({ email: req.body.data.email }, {
     $set: {
-      firstName: req.body.data.firstName, surName: req.body.data.surName, tel: req.body.data.tel, dob: req.body.data.dob,
+      firstName: req.body.data.firstName, surName: req.body.data.surName, phoneNumber: req.body.data.phoneNumber, dob: req.body.data.dob,
     },
   }, (err, data) => {
     if (err) {

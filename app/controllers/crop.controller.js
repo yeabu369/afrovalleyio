@@ -90,7 +90,7 @@ exports.update = (req, res) => {
         message: `Error updating Crop with id=${id}`,
       });
     });
-}
+};
 
 // Delete a Crop with the specified id in the request
 exports.delete = (req, res) => {
@@ -115,7 +115,7 @@ exports.delete = (req, res) => {
         message: `Could not delete Crop with id=${id}`,
       });
     });
-}
+};
 
 // Delete all Crops from the database.
 exports.deleteAll = (req, res) => {
@@ -131,5 +131,4 @@ exports.deleteAll = (req, res) => {
         message: err.message || 'Some error occurred while removing all crops.',
       });
     });
-}
-
+};

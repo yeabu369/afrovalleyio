@@ -35,7 +35,7 @@ module.exports = function (app) {
 
   app.get('/api/admin/users', async (req, resp) => {
     console.log(req.query);
-    const data = await User.find({}, 'firstName surName email tel dob role', (err, docs) => {
+    const data = await User.find({}, 'firstName surName email phoneNumber dob role', (err, docs) => {
       if (err) {
         resp.send(err);
       }

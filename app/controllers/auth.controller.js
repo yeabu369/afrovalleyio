@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const config = require('../config/auth.config');
 const db = require('../models');
+const algosdk = require('algosdk');
 
 const User = db.user;
 const Role = db.role;
@@ -53,14 +54,19 @@ exports.signup = async (req, res) => {
     },
   );
 };
+
 exports.register = (req, res) => {
+  const { addr, sk } = algosdk.generateAccount();
+
   const user = new User({
     username: req.body.username,
     email: req.body.email,
     firstName: req.body.firstName,
     surName: req.body.surName,
-    tel: req.body.tel,
+    phoneNumber: req.body.phoneNumber,
     password: bcrypt.hashSync(req.body.password, 8),
+    algorandAddress: addr,
+    algorandSK: sk,
   });
 
   user.save((err, user) => {
@@ -172,7 +178,7 @@ exports.signin = async (req, res) => {
         email: user.email,
         firstName: user.firstName,
         surName: user.surName,
-        tel: user.tel,
+        phoneNumber: user.phoneNumber,
         role: user.role,
         accessToken: token,
       });
