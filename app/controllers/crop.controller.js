@@ -66,3 +66,70 @@ exports.findOne = (req, res) => {
       });
     });
 };
+
+// Update a Crop by the id in the request
+exports.update = (req, res) => {
+  const { id } = req.params;
+
+  Crop.update(req.body, {
+    where: { id },
+  })
+    .then((num) => {
+      if (num == 1) {
+        res.send({
+          message: 'Crop was updated successfully.',
+        });
+      } else {
+        res.send({
+          message: `Cannot update Crop with id=${id}. Maybe Crop was not found or req.body is empty!`,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: `Error updating Crop with id=${id}`,
+      });
+    });
+}
+
+// Delete a Crop with the specified id in the request
+exports.delete = (req, res) => {
+  const { id } = req.params;
+
+  Crop.destroy({
+    where: { id },
+  })
+    .then((num) => {
+      if (num == 1) {
+        res.send({
+          message: 'Crop was deleted successfully!',
+        });
+      } else {
+        res.send({
+          message: `Cannot delete Crop with id=${id}. Maybe Crop was not found!`,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: `Could not delete Crop with id=${id}`,
+      });
+    });
+}
+
+// Delete all Crops from the database.
+exports.deleteAll = (req, res) => {
+  Crop.destroy({
+    where: {},
+    truncate: false,
+  })
+    .then((nums) => {
+      res.send({ message: `${nums} Crops were deleted successfully!` });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while removing all crops.',
+      });
+    });
+}
+
