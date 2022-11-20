@@ -6,7 +6,7 @@ import content from '../../data/footer';
 
 const Layout = ({ children }: any) => {
     return (
-        <Box component="main">
+        <Box style={{ display: "flex", flexDirection: "column" }} component="main">
             <Header />
             {children}
             <Footer data={content.data} />

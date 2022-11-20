@@ -3,6 +3,8 @@ import { createStyles } from "@mantine/core";
 export default createStyles((theme) => ({
     wrapper: {
       display: 'flex',
+      border: "1px solid red",
+      height: "100vh"
     },
   
     aside: {
@@ -17,6 +19,7 @@ export default createStyles((theme) => ({
     },
   
     main: {
+      border: `1px solid #000`,
       flex: 1,
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
@@ -61,8 +64,8 @@ export default createStyles((theme) => ({
       width: '100%',
       display: 'flex',
       justifyContent: 'center',
+      alignItems: 'center',
       height: 60,
-      paddingTop: theme.spacing.md,
       borderBottom: `1px solid ${
         theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[3]
       }`,

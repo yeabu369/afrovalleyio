@@ -4,7 +4,7 @@ import { Footer, Header, Layout, Market } from '../components'
 
 const Marketplace: NextPage & { getLayout: Function } = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Marketplace | AfroValley Trade Platform</title>
         <meta name="description" content="Afrovalley Marketplace" />
@@ -12,7 +12,7 @@ const Marketplace: NextPage & { getLayout: Function } = () => {
       </Head>
       
       <Market />
-    </div>
+    </>
   )
 }
 

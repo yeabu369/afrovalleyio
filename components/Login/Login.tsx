@@ -11,7 +11,7 @@ import {
     Button,
     Center,
 } from '@mantine/core';
-import AfroValleyLogo from '../Logo/Logo';
+import AfroValleyLogo from '../Logo/LogoWithText';
 
 export default function AuthenticationTitle() {
     return (

@@ -1,22 +1,18 @@
 import { useState } from 'react';
-import { createStyles, Navbar, UnstyledButton, Tooltip, Title, Anchor } from '@mantine/core';
+import { Navbar, UnstyledButton, Tooltip, Title, Anchor, Drawer, ActionIcon } from '@mantine/core';
 import {
   IconHome2,
   IconGauge,
-  IconDeviceDesktopAnalytics,
   IconFingerprint,
-  IconCalendarStats,
   IconUser,
   IconSettings,
+  IconMenu2,
 } from '@tabler/icons';
-import AfroValleyLogo from '../Logo/Logo';
 import useStyles from './Navbar.styles';
 
 const mainLinksMockdata = [
-  { icon: IconHome2, label: 'Home' },
   { icon: IconGauge, label: 'Dashboard' },
-  { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
-  { icon: IconCalendarStats, label: 'Releases' },
+  { icon: IconHome2, label: 'Orders' },
   { icon: IconUser, label: 'Account' },
   { icon: IconFingerprint, label: 'Security' },
   { icon: IconSettings, label: 'Settings' },
@@ -28,12 +24,12 @@ const linksMockdata = [
   'Account',
   'Security',
   'Settings',
-  'Clients',
 ];
 
 export default function DoubleNavbar() {
+  const [opened, setOpened] = useState(true);
   const { classes, cx } = useStyles();
-  const [active, setActive] = useState('Releases');
+  const [active, setActive] = useState('Dashboard');
   const [activeLink, setActiveLink] = useState('Settings');
 
   const mainLinks = mainLinksMockdata.map((link) => (
@@ -61,12 +57,21 @@ export default function DoubleNavbar() {
     </Anchor>
   ));
 
+  const toggleDrawer = () => setOpened((o) => !o);
+
   return (
-    <Navbar height="100ch" width={{ sm: 300 }}>
+    <Drawer
+      onClose={() => setOpened(false)}
+      opened={opened}
+      position="left"
+      size="md"
+    >
       <Navbar.Section grow className={classes.wrapper}>
         <div className={classes.aside}>
           <div className={classes.logo}>
-            <AfroValleyLogo width={60} height={20} />
+            <ActionIcon onClick={() => toggleDrawer()} variant="transparent">
+              <IconMenu2 size={16} />
+            </ActionIcon>
           </div>
           {mainLinks}
         </div>
@@ -78,6 +83,7 @@ export default function DoubleNavbar() {
           {links}
         </div>
       </Navbar.Section>
-    </Navbar>
+
+    </Drawer>
   );
 }

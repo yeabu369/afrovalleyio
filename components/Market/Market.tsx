@@ -65,7 +65,45 @@ const orders: Order[] = [
     price: 7.49,
     quantity: 1000,
     total: 7490
-  }
+  },
+  {
+    id: 1,
+    bean: {
+      grade: 1,
+      image: "",
+      origin: "Yirga Cheffe",
+      state: "Green",
+      type: "Coffee Arabica"
+    },
+    orderedBy: {
+      avatar: "",
+      deals: 82,
+      name: "Hussen Abadega",
+      rating: 4.8,
+    },
+    price: 7.49,
+    quantity: 1000,
+    total: 7490
+  },
+  {
+    id: 1,
+    bean: {
+      grade: 1,
+      image: "",
+      origin: "Yirga Cheffe",
+      state: "Green",
+      type: "Coffee Arabica"
+    },
+    orderedBy: {
+      avatar: "",
+      deals: 82,
+      name: "Hussen Abadega",
+      rating: 4.8,
+    },
+    price: 7.49,
+    quantity: 1000,
+    total: 7490
+  },
 ]
 
 const Market = () => {
@@ -73,8 +111,8 @@ const Market = () => {
   const { classes, cx } = useStyles();
 
   return (
-    <SimpleGrid cols={2} spacing={0} className={cx(classes.hScreen)}>
-      <Box p={20} className={classes.flex}>
+    <SimpleGrid cols={2} spacing={0}>
+      <Box p={20} className={classes.box}>
         <Skeleton className={cx(classes.hFull)} visible={loading}>
           <Grid>
             <Grid.Col span={12}>
