@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const User = mongoose.model(
   "User",
   new mongoose.Schema({
@@ -11,14 +12,14 @@ const User = mongoose.model(
     password: String,
     confirmed: {
       type: Boolean,
-        default: false
+      default: false
     },
-    role: 
-      {
-        type: String,
-        default: "user"
-      }
-    
+    role:
+    {
+      type: String,
+      default: "user"
+    }
+
   })
 );
 

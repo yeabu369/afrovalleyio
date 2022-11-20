@@ -7,62 +7,56 @@ const Role = db.role;
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
-
-
-async function testAccount(){ 
-let testAccount = await nodemailer.createTestAccount();
+async function testAccount() {
+  let testAccount = await nodemailer.createTestAccount();
 }
-  // create reusable transporter object using the default SMTP transport
-  transporter = nodemailer.createTransport({
-    service: "hotmail",
-    auth: {
-      user: "ergoergo8@outlook.com",
-      pass: "ergo!@#$%123", 
-    },
-  });
+// create reusable transporter object using the default SMTP transport
+transporter = nodemailer.createTransport({
+  service: "hotmail",
+  auth: {
+    user: "ergoergo8@outlook.com",
+    pass: "ergo!@#$%123",
+  },
+});
 
 const EMAIL_SECRET = 'asdf1093KMnzxcvnkljvasdu09123nlasdasdf';
 
-
-
-
 exports.signup = async (req, res) => {
+  // async email
+  console.log("auth routes node " + req.body.email);
+  jwt.sign(
+    {
+      email: req.body.email,
+      isVerified: true
+    },
+    EMAIL_SECRET,
+    {
+      expiresIn: '1d',
+    },
+    (err, emailToken) => {
+      const url = `http://localhost:4200/confirmation/${emailToken}`;
+      console.log("email token " + emailToken);
+      let info = transporter.sendMail({
+        from: '"AfroValley Portal 👻" <ergoergo8@outlook.com>', // sender address
+        to: req.body.email, // receiver
+        subject: "Email Verification ✔", // Subject line
+        html: `<b href="${url}">Welcome, </b> Click on the link or copy paste this message to your browser <br> ${url}`, // plain text body
 
-   // async email
-   console.log("auth routes node " + req.body.email);
-   jwt.sign(
-     {
-       email: req.body.email,
-       isVerified: true
-     },
-     EMAIL_SECRET,
-     {
-       expiresIn: '1d',
-     },
-     (err, emailToken) => {
-       const url = `http://localhost:4200/confirmation/${emailToken}`;
-       console.log("email token " + emailToken);
-       let info =  transporter.sendMail({
-     from: '"AfroValley Portal 👻" <ergoergo8@outlook.com>', // sender address
-     to: req.body.email, // receiver
-     subject: "Email Verification ✔", // Subject line
-     html: `<b href="${url}">Welcome, </b> Click on the link or copy paste this message to your browser <br> ${url}`, // plain text body
-   
-   }, function(err,info){
-     if(err) {console.log(err); return}
-     console.log("sent: " +info.response);
-     res.status(500).send({ message: err });
-             return;
-   });
- 
-  
-   res.status(200).send({ message: "Email sent to " + req.body.email });
-             return;
-     },
-   );
- 
+      }, function (err, info) {
+        if (err) { console.log(err); return }
+        console.log("sent: " + info.response);
+        res.status(500).send({ message: err });
+        return;
+      });
+
+
+      res.status(200).send({ message: "Email sent to " + req.body.email });
+      return;
+    },
+  );
+
 };
-exports.register = (req, res)=>{
+exports.register = (req, res) => {
   const user = new User({
     username: req.body.username,
     email: req.body.email,
@@ -83,9 +77,9 @@ exports.register = (req, res)=>{
     } else {
       user.role = "user",
 
-    res.send({ message: "User was registered successfully!" });
-       
-      
+        res.send({ message: "User was registered successfully!" });
+
+
     }
   });
 }
@@ -146,13 +140,13 @@ exports.signin = async (req, res) => {
   User.findOne({
     username: req.body.username
   })
-   
+
     .exec((err, user) => {
       if (err) {
         res.status(500).send({ message: err });
         return;
       }
-     
+
       if (!user) {
         return res.status(404).send({ message: "User Not found." });
       }

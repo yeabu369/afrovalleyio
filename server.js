@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require('mongoose');
-var path=require('path');
+var path = require('path');
 const dbConfig = require("./app/config/db.config");
 
 const app = express();
@@ -17,7 +17,7 @@ app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public')); 
+app.use(express.static('public'));
 app.use('/files', express.static('files'));
 
 const db = require("./app/models");
@@ -25,24 +25,17 @@ const db = require("./app/models");
 const Category = db.category;
 
 mongoose.connect(
-  `mongodb+srv://afrovalley:afroValley2022@cluster0.zmf22bu.mongodb.net/?retryWrites=true&w=majority`,{
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true
-  }
-)
-  .then(() => {
-    console.log("Successfully connect to MongoDB.");
-   
-  })
-  .catch(err => {
-    console.error("Connection error", err);
-    process.exit();
-  });
-
-
-
+  `mongodb+srv://afrovalley:afroValley2022@cluster0.zmf22bu.mongodb.net/?retryWrites=true&w=majority`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+}).then(() => {
+  console.log("Successfully connect to MongoDB.");
+}).catch(err => {
+  console.error("Connection error", err);
+  process.exit();
+});
 
 // simple route
 app.get("/", (req, res) => {
@@ -52,8 +45,6 @@ app.get("/", (req, res) => {
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
-
-
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
@@ -95,6 +86,4 @@ function initial() {
       });
     }
   });
-
-  
 }
