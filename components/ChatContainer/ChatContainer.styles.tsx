@@ -4,6 +4,24 @@ export default createStyles((theme) => ({
     root: {
 
     },
+  
+    bottom: {
+        position: 'absolute',
+        bottom: 100,
+        width: '100%',
+        maxWidth: 500,
+        padding: theme.spacing.xs,
+    },
+
+  
+    
+
+    left: {
+    
+        paddingLeft: '60px',
+        width: '70%',
+      
+    },
     top: {
         paddingTop: theme.spacing.sm,
         paddingBottom: theme.spacing.sm,
