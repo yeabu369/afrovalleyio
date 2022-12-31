@@ -9,6 +9,3 @@
     "extends": "tsconfig/base.json",
     "include": ["src"] 
 }
-
-// q: What's wrong with this tsconfig.json?
-// a: It's missing the "include" property, which is required for the "extends" property to work.
